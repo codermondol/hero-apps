@@ -38,23 +38,23 @@ const AppsDetails = () => {
                 <div className='w-6/12 lg:w-3/12 bg-[#f5f5f5] rounded-2xl overflow-hidden mx-auto'>
                     <img src={image} alt="" className='w-full h-auto object-cover rounded-2xl' />
                 </div>
-                <div className='w-9/12 space-y-4 text-center mx-auto'>
+                <div className='w-9/12 space-y-4 text-center md:text-left mx-auto'>
                     <h1 className='font-bold text-3xl sm:text-4xl lg:text-5xl'>{title}</h1>
                     <p>Developed by <span className='bg-gradient-to-br from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent font-bold'>{companyName}</span></p>
                     <div className='border-t-2 border-gray-200'></div>
                     <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10'>
                         <div className='space-y-2'>
-                            <img src={downloadIcon} alt="" className='mx-auto'/>
+                            <img src={downloadIcon} alt="" className='mx-auto sm:m-3'/>
                             <p>Downloads</p>
                             <h4 className='text-3xl font-bold'>{formatDownloads(downloads)}</h4>
                         </div>
                         <div className='space-y-2'>
-                            <img src={ratingIcon} alt="" className='mx-auto'/>
+                            <img src={ratingIcon} alt="" className='mx-auto sm:m-3'/>
                             <p>Average Ratings</p>
                             <h4 className='text-3xl font-bold'>{ratingAvg}</h4>
                         </div>
                         <div className='space-y-2'>
-                            <img src={reviewIcon} alt="" className='mx-auto'/>
+                            <img src={reviewIcon} alt="" className='mx-auto sm:m-3'/>
                             <p>Total Reviews</p>
                             <h4 className='text-3xl font-bold'>{formatDownloads(reviews)}</h4>
                         </div>

@@ -2,22 +2,29 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router';
 import SingleAppsItems from '../../Components/SingleAppsItems/SingleAppsItems';
 import SingleApps from '../../Components/SingleApps/SingleApps';
+import { FourSquare } from 'react-loading-indicators';
 
 const Apps = () => {
     const data = useLoaderData()
     const [search, setSearch] = useState('');
     const [filteredApps, setFilteredApps] = useState([])
+    const [searchLoading, setSearchLoading] = useState(false)
 
     useEffect(() => {
-        const queries = search.trim().toLowerCase();
+        setSearchLoading(true);
+        const time = setTimeout(() => {
+            const queries = search.trim().toLowerCase();
 
-        if (!queries) {
-            setFilteredApps(data)
-        }
-        else {
-            const result = data.filter(app => (app.title || '').toLowerCase().includes(queries));
-            setFilteredApps(result)
-        }
+            if (!queries) {
+                setFilteredApps(data)
+            }
+            else {
+                const result = data.filter(app => (app.title || '').toLowerCase().includes(queries));
+                setFilteredApps(result)
+            }
+            setSearchLoading(false);
+        }, 300)
+        return () => clearTimeout(time)
     }, [data, search])
 
     return (
@@ -53,21 +60,29 @@ const Apps = () => {
                         </label>
                     </div>
                 </div>
-                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-20'>
-                    {
-                        filteredApps.length === 0 ? (
-                            <div className='col-span-full flex flex-col items-center justify-center text-center'>
-                                <p className={`text-5xl my-6 font-bold`}>No App Found</p>
-                                
-                            </div>
-                        ) : (
-                            filteredApps.map(singleData => <SingleApps
-                                key={singleData.id}
-                                singleData={singleData}
-                            ></SingleApps>)
-                        )
-                    }
-                </div>
+                {
+                    searchLoading ? (
+                        <div className='flex justify-center my-12'>
+                            <FourSquare color="#32cd32" size="medium" text="" textColor=""></FourSquare>
+                        </div>
+                    ) : (
+                        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-20'>
+                            {
+                                filteredApps.length === 0 ? (
+                                    <div className='col-span-full flex flex-col items-center justify-center text-center'>
+                                        <p className={`text-5xl my-6 font-bold`}>No App Found</p>
+
+                                    </div>
+                                ) : (
+                                    filteredApps.map(singleData => <SingleApps
+                                        key={singleData.id}
+                                        singleData={singleData}
+                                    ></SingleApps>)
+                                )
+                            }
+                        </div>
+                    )
+                }
 
             </div>
         </div>
