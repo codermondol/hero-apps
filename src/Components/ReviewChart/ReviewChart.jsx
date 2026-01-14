@@ -6,7 +6,7 @@ const ReviewChart = ({ ratings }) => {
   const dataValue = (value) => `${(value / 1000000).toFixed(1)}M`
 
   return (
-    <div className="w-full h-96"> 
+    <div className="w-full h-96 "> 
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={reversedRatings}
@@ -17,7 +17,7 @@ const ReviewChart = ({ ratings }) => {
             type="number" 
             tickFormatter={dataValue} 
           />
-          <YAxis type="category" dataKey="name" />
+          <YAxis type="category" dataKey="name"   />
           <Tooltip formatter={dataValue} />
           <Legend />
           <Bar dataKey="count" fill="#FF8811" />

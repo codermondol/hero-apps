@@ -24,13 +24,12 @@ const addToStoredLS = (id) => {
 }
 
 const removeFromStoredLS = (id) => {
-  const storedAppData = getStoredApps();
-
-  const remainingData = storedAppData.filter(
-    appId => String(appId) !== String(id)
-  );
-
-  saveAppToLS(remainingData);
+    const storedCart = getStoredApps();
+    console.log(storedCart)
+    const remainingCart = storedCart.filter(storedId => storedId !== String(id))
+    console.log(remainingCart)
+    saveAppToLS(JSON.stringify(remainingCart));
+    
 };
 
 

@@ -35,7 +35,7 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn bg-gradient-to-br from-[#632EE3] to-[#9F62F2] text-white font-bold"><img src={githubIcon} alt="" /> Contribute</a>
+                    <a href='https://github.com/codermondol' className="btn bg-gradient-to-br from-[#632EE3] to-[#9F62F2] text-white font-bold"><img src={githubIcon} alt="" /> Contribute</a>
                 </div>
             </div>
         </div>

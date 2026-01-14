@@ -20,7 +20,7 @@ const AppsSection = () => {
             </div>
             <div className='my-15 text-center'>
                 
-               <a href="/apps"> <button className='btn bg-gradient-to-br from-[#632EE3] to-[#9F62F2] text-white font-bold'>Show All</button></a>
+               <a href="/apps"> <button className='btn bg-gradient-to-br from-[#632EE3] to-[#9F62F2] text-white font-bold px-20'>Show All</button></a>
             </div>
         </div>
     );
