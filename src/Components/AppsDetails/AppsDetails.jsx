@@ -5,6 +5,8 @@ import ratingIcon from '../../assets/icon-ratings.png'
 import reviewIcon from '../../assets/icon-review.png'
 import { Space } from 'lucide-react';
 import ReviewChart from '../ReviewChart/ReviewChart';
+import { addToStoredLS } from '../../utility/addToDB';
+import { formatDownloads } from '../../utility/FormatDownload';
 
 const AppsDetails = () => {
     const { id } = useParams()
@@ -12,20 +14,18 @@ const AppsDetails = () => {
     const appsData = useLoaderData();
     const singleApp = appsData.find(app => app.id === appId)
 
-    const { image, companyName, size, title, downloads, ratingAvg, reviews, description, ratings} = singleApp;
+    const { image, companyName, size, title, downloads, ratingAvg, reviews, description, ratings } = singleApp;
 
-    const formatDownloads = (num) => {
-        if (num >= 1000000000) {
-            return `${(num / 1_000_000_000).toFixed(1)}B`;
-        }
-        else if (num >= 1000000) {
-            return `${(num / 1_000_000).toFixed(1)}M`;
-        }
-        else if (num >= 1000) {
-            return `${(num / 1_000).toFixed(1)}K`;
-        }
-        return num;
-    };
+    const handleInstallNow = (id) => {
+        //Store with id
+        //where to store {local store}
+        // array like collection
+        // if book already exist the show a alart
+        // if the book exist then push in the collection or array
+
+        addToStoredLS(id)
+    }
+
 
     return (
         <div className='max-w-[1220px] mx-auto py-20'>
@@ -54,7 +54,7 @@ const AppsDetails = () => {
                             <h4 className='text-3xl font-bold'>{formatDownloads(reviews)}</h4>
                         </div>
                     </div>
-                    <button className='btn bg-[#00D390] hover:bg-gradient-to-br hover:from-[#632EE3] hover:to-[#9F62F2] text-white text-xl py-7 rounded transition-all duration-300 mt-10'>Install Now ({size} MB)</button>
+                    <button onClick={() => handleInstallNow(id)} className='btn bg-[#00D390] hover:bg-gradient-to-br hover:from-[#632EE3] hover:to-[#9F62F2] text-white text-xl py-7 rounded transition-all duration-300 mt-10'>Install Now ({size} MB)</button>
                 </div>
             </div>
 

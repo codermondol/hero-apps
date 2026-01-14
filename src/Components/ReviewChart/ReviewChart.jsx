@@ -20,7 +20,7 @@ const ReviewChart = ({ ratings }) => {
           <YAxis type="category" dataKey="name" />
           <Tooltip formatter={dataValue} />
           <Legend />
-          <Bar dataKey="count" fill="#4ade80" />
+          <Bar dataKey="count" fill="#FF8811" />
         </BarChart>
       </ResponsiveContainer>
     </div>
