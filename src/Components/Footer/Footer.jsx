@@ -5,7 +5,7 @@ import { Facebook, Linkedin, Twitter, Youtube } from 'lucide-react';
 const Footer = () => {
     return (
         <footer className=" bg-neutral ">
-            <div className='max-w-[1220px] px-10 lg:p-0 mx-auto text-neutral-content py-10 footer sm:footer-horizontal'>
+            <div className='max-w-[1220px] px-10 lg:px-0 mx-auto text-neutral-content py-10 footer sm:footer-horizontal'>
                 <nav>
                     <a href='/' className="text-xl w-[80px] md:ml-4 flex items-center">
                         <img src={logoImg} alt="" className='w-[30px]' />
