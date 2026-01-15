@@ -2,6 +2,7 @@ import { Download, Star } from 'lucide-react';
 import React, { useState } from 'react';
 import { formatDownloads } from '../../utility/FormatDownload';
 import { removeFromStoredLS } from '../../utility/addToDB';
+import { toast } from 'react-toastify';
 
 const InstalledApps = ({ installedItem }) => {
     const [isInstalled, setIsInstalled] = useState(true);
@@ -12,6 +13,7 @@ const InstalledApps = ({ installedItem }) => {
 
         removeFromStoredLS(id)
         setIsInstalled(false);
+        toast('App Uninstalled!')
     }
     if (!isInstalled) {
         return null; 

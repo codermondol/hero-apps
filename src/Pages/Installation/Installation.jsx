@@ -5,6 +5,8 @@ import InstalledApps from '../../Components/InstalledApps/InstalledApps';
 
 const Installation = () => {
     const [installedApp, setInstalledApp] = useState([])
+    const [sort, setSort] = useState('');
+    const [selectedSort, setSelectedSort] = useState(false)
 
     const data = useLoaderData()
 
@@ -13,7 +15,23 @@ const Installation = () => {
         const convertedStoredApp = storedAppData.map(app => parseInt(app))
         const installApps = data.filter(app => convertedStoredApp.includes(app.id))
         setInstalledApp(installApps)
-    }, [])
+
+    }, [data])
+
+    const handleSort = type => {
+        setSort(type)
+        setSelectedSort(true)
+        const sorted = [...installedApp].sort((a, b) => {
+            const aD = parseInt(String(a.downloads).replace(/,/g, ""), 10) || 0;
+            const bD = parseInt(String(b.downloads).replace(/,/g, ""), 10) || 0;
+
+            return type === "high"
+                ? bD - aD
+                : aD - bD; 
+        });
+
+        setInstalledApp(sorted);
+    }
 
     return (
         <div>
@@ -24,7 +42,15 @@ const Installation = () => {
                     <div className='flex justify-between my-8 items-center'>
                         <div><span className='font-bold text-xl'>({installedApp.length}) Apps Found</span></div>
                         <div>
-                            
+                            <div className="dropdown">
+                                <div tabIndex={0} role="button" className="btn m-1">
+                                   Sort By: {!selectedSort ? 'Downloads' : sort === 'low' ? 'Low to High' : 'High to Low' }
+                                </div>
+                                <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+                                    <li onClick={() => handleSort("low")} className='p-2 font-bold cursor-pointer'>Low to High</li>
+                                    <li onClick={() => handleSort("high")} className='p-2 font-bold cursor-pointer'>High to Low</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     {

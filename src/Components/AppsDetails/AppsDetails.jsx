@@ -28,7 +28,7 @@ const AppsDetails = () => {
 
         addToStoredLS(id)
         setIsDisable(true)
-        toast('App Installed!')
+        toast('App Install Completed!')
     }
 
 
