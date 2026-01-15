@@ -34,7 +34,8 @@ export const router = createBrowserRouter([
             loader: () => fetch('/apps.json'),
             errorElement: <AppErrorPage></AppErrorPage>,
             Component: AppsDetails
-        }
-    ]
+        },
+        { path: "*", Component: ErrorPage },
+    ],
   },
 ]);
