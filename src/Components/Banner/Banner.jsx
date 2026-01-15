@@ -8,7 +8,7 @@ const Banner = () => {
     return (
         <div className='text-center w-6/12 mx-auto space-y-10 justify-center'>
             <div className='space-y-5'>
-                <h1 className='text-6xl font-bold mt-20'>We Build <br /><span className='bg-gradient-to-br from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent font-bold'>Productive</span> Apps</h1>
+                <h1 className='text-4xl md:text-6xl font-bold mt-20'>We Build <br /><span className='bg-gradient-to-br from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent font-bold'>Productive</span> Apps</h1>
                 <p>At HERO.IO, we craft innovative apps designed to make everyday life simpler, smarter, and more exciting. Our goal is to turn your ideas into digital experiences that truly make an impact.</p>
                 <div className='flex gap-10 justify-center'>
                     <Link to='https://play.google.com/store/games?hl=en'><button className='flex items-center gap-4 text-xl font-bold btn border-gray-200 py-7 rounded hover:bg-gradient-to-br hover:from-[#632EE3] hover:to-[#9F62F2]

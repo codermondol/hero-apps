@@ -20,7 +20,7 @@ const SingleAppsItems = ({ AppsItem }) => {
 
     return (
         <Link to={`/apps/${id}`}>
-        <div className='bg-white p-5 rounded-xl'>
+        <div className='bg-white rounded-xl p-4'>
                 <div className='w-full max-w-[320px] h-[240px] mx-auto bg-[#f5f5f5] rounded-2xl overflow-hidden'><img src={image} alt="" className='w-full h-full object-cover' /></div>
                 <h4 className='mt-5 font-bold text-2xl'>{title}</h4>
                 <div className='mt-3 flex justify-between'>

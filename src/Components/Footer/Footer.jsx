@@ -5,7 +5,7 @@ import { Facebook, Linkedin, Twitter, Youtube } from 'lucide-react';
 const Footer = () => {
     return (
         <footer className=" bg-neutral ">
-            <div className='max-w-[1220px] mx-auto text-neutral-content py-10 footer sm:footer-horizontal'>
+            <div className='max-w-[1220px] px-10 lg:p-0 mx-auto text-neutral-content py-10 footer sm:footer-horizontal'>
                 <nav>
                     <a href='/' className="text-xl w-[80px] md:ml-4 flex items-center">
                         <img src={logoImg} alt="" className='w-[30px]' />
@@ -20,17 +20,17 @@ const Footer = () => {
                 </nav>
                 <nav>
                     <h6 className="footer-title">Legal</h6>
-                    <a className="link link-hover">Terms of use</a>
-                    <a className="link link-hover">Privacy policy</a>
-                    <a className="link link-hover">Cookie policy</a>
+                    <a href='/' className="link link-hover">Terms of use</a>
+                    <a href='/' className="link link-hover">Privacy policy</a>
+                    <a href='/' className="link link-hover">Cookie policy</a>
                 </nav>
                 <nav>
                     <h6 className="footer-title">social</h6>
                     <div className='flex items-center gap-5'>
-                        <a className="link link-hover"><Facebook></Facebook> </a>
-                        <a className="link link-hover"><Twitter></Twitter> </a>
-                        <a className="link link-hover"><Linkedin></Linkedin></a>
-                        <a className="link link-hover"><Youtube></Youtube></a>
+                        <a href='https://www.facebook.com/' className="link link-hover"><Facebook></Facebook> </a>
+                        <a href='https://x.com/' className="link link-hover"><Twitter></Twitter> </a>
+                        <a href='https://www.linkedin.com/' className="link link-hover"><Linkedin></Linkedin></a>
+                        <a href='https://www.youtube.com/' className="link link-hover"><Youtube></Youtube></a>
                     </div>
                 </nav>
             </div>

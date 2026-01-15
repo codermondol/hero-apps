@@ -21,8 +21,8 @@ const InstalledApps = ({ installedItem }) => {
 
     return (
         <div className='bg-white rounded mb-5 p-5'>
-            <div className='flex justify-between items-center'>
-                <div className='flex gap-7'>
+            <div className='flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6'>
+                <div className='flex flex-col sm:flex-row gap-5 w-full'>
                     <div className='max-w-[100px] max-h-[100px]'>
                         <img src={image} alt="" className='w-auto h-auto max-w-full max-h-full rounded object-contain' />
                     </div>

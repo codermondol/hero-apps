@@ -25,11 +25,8 @@ const addToStoredLS = (id) => {
 
 const removeFromStoredLS = (id) => {
     const storedCart = getStoredApps();
-    console.log(storedCart)
     const remainingCart = storedCart.filter(storedId => storedId !== String(id))
-    console.log(remainingCart)
     saveAppToLS(JSON.stringify(remainingCart));
-    
 };
 
 

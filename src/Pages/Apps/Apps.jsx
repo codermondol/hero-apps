@@ -34,7 +34,7 @@ const Apps = () => {
                     <h2 className='text-4xl font-bold'>Our All Applications</h2>
                     <p className='mt-2 mb-5'>Explore All Apps on the Market developed by us. We code for Millions</p>
                 </div>
-                <div className='flex justify-between my-8 items-center'>
+                <div className='flex justify-between my-8 items-center mx-4 md:mx-0'>
                     <div><span className='font-bold text-xl'>({data.length}) Apps Found</span></div>
                     <div>
                         <label className="input p-6 rounded-xl">

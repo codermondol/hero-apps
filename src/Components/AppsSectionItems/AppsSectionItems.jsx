@@ -5,7 +5,7 @@ const AppsSectionItems = ({ appsPromise }) => {
     const AppsData = use(appsPromise);
     return (
         <div>
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 p-5 md:p-0'>
                 {
                     AppsData.slice(0, 8).map(AppsItem => <SingleAppsItems
                         key={AppsItem.id}
